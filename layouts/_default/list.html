@@ -13,26 +13,25 @@
               {{ partial "lastmod.html" . }}
             {{ end }}
           {{ end }}
-          {{ with .Params.Author }}
+          <!-- {{ with .Params.Author }}
             <span class="post-author"
               >— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span
-            >{{ end }}
+            >{{ end }} -->
 
+            {{ if .Params.tags }}
+            <span class="">. 
+              {{ range .Params.tags }}
+                #<a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">{{ . }}</a>&nbsp;
+              {{ end }}
+            </span>
+            {{ end }}
 
           {{ if $.Site.Params.ShowReadingTime }}
             <span class="post-read-time"
-              >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
+              >. {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
             >
           {{ end }}
         </div>
-
-        {{ if .Params.tags }}
-          <span class="post-tags">
-            {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
-            {{ end }}
-          </span>
-        {{ end }}
 
         {{ if .Params.Cover }}
           <figure class="post-cover">
@@ -59,7 +58,7 @@
         </div>
         {{ if not .Params.hideReadMore }}
           <div>
-            <a class="read-more button" href="{{ .RelPermalink }}"
+            <a class="read-more" href="{{ .RelPermalink }}"
               >{{ $.Site.Params.ReadMore | default "Read more" }} →</a
             >
           </div>

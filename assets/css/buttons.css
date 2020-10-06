@@ -71,7 +71,7 @@ a.read-more:active {
   box-shadow: none;
   padding: 0;
   margin: 20px 0;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .code-toolbar {

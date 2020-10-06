@@ -3,7 +3,9 @@
   align-items: center;
   flex: 0 0 auto;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
+  font-family: "Playfair Display",Helvetica,Arial,sans-serif;
+  font-size: 1.5em;
 
   img {
     height: 44px;
@@ -18,7 +20,7 @@
   }
 
   &__text {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
   }
 
   &__cursor {

@@ -17,26 +17,22 @@
         {{ end }}
       {{ end }}
 
-      {{ with .Params.Author }}
+      <!-- {{ with .Params.Author }}
         <span class="post-author"
           >— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span
-        >{{ end }}
-
+        >{{ end }} -->
+      
+      <span> · <span class="comment-count" data-xid="{{ .URL | relURL }}">0</span> 评论</span>
 
       {{ if $.Site.Params.ShowReadingTime }}
         <span class="post-read-time"
-          >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
+          > ·  {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
         >
       {{ end }}
-    </div>
 
-    {{ if .Params.tags }}
-      <span class="post-tags">
-        {{ range .Params.tags }}
-          <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
-        {{ end }}
-      </span>
-    {{ end }}
+      
+
+    </div>
 
     {{ if .Params.Cover }}
       <figure class="post-cover">
@@ -58,6 +54,14 @@
         <aside class="table-of-contents">{{ .TableOfContents }}</aside>
       {{ end }}
       {{ .Content }}
+
+      {{ if .Params.tags }}
+      <span class="c-tags">
+        {{ range .Params.tags }}
+          <a class="" href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">{{ . }}</a>&nbsp;
+        {{ end }}
+      </span>
+      {{ end }}
     </div>
     {{ if eq .Type $.Site.Params.contentTypeName }}
       {{ if or .NextInSection .PrevInSection }}
