@@ -6,7 +6,6 @@ Hugo directory and insert:
 
 or whatever comment engine you want -> https://gohugo.io/content-management/comments/#readout -->
 {{- if .Site.Params.valine.enable -}}
-<script type="text/javascript" src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cloud.panjunwen.com/av-min.js" type="text/javascript"></script>
 
 <script src="{{ "/Valine.min.js" | absURL }}"></script>
@@ -28,6 +27,14 @@ or whatever comment engine you want -> https://gohugo.io/content-management/comm
             app_key: '{{ $.Site.Params.valine.appKey }}',
             placeholder: '{{ $.Site.Params.valine.placeholder }}'
         });
+    }
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
     }
 </script>
 {{- end }}
