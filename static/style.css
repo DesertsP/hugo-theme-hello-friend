@@ -157,6 +157,11 @@ body {
     background-color: #f6f9fc
   }
 
+.archive__group-year-header, .archive__group-month-header, .archive__post-title{
+	font-weight: normal;
+	font-family: "Jost*",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+}
+
 /* searchBoxInput */
 /* .menu .search-box-icon {margin-top: 11px; } */
 .searchPage{min-height:300px}
@@ -250,3 +255,4 @@ body {
 .dark-theme .post-preview {
 	background: var(--background);
 }
+
