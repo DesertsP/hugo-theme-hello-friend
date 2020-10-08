@@ -24,8 +24,8 @@ or whatever comment engine you want -> https://gohugo.io/content-management/comm
         app_id: '{{ $.Site.Params.valine.appId }}',
         app_key: '{{ $.Site.Params.valine.appKey }}',
         placeholder: '{{ $.Site.Params.valine.placeholder }}',
-        max_nest: 2,
-        page_size: 10
+        max_nest: '{{ $.Site.Params.valine.maxNest }}',
+        page_size: '{{ $.Site.Params.valine.pageSize }}'
     });
 </script>
 
