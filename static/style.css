@@ -57,6 +57,18 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.post-content>:first-child::first-letter {
+    float: left;
+    height: 2em;
+    margin-top: 0;
+    margin-right: 8px;
+    color: #555;
+    font-size: 4rem;
+    line-height: 1;
+    font-style: normal;
+    font-weight: normal
+}
+
 .post-cover img {
 	width: 100%;
 	height: inherit !important;
